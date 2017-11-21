@@ -2,7 +2,7 @@
 
 # Upload instruction
 
-## Specification .bin files
+### Specification .bin files
   -  Module: Generic ESP8266 Module
   -  Flash Size: 1M(256K SPIFFS)
   -  CPU Frequency: 160Mhz
@@ -10,9 +10,9 @@
   -  Flash Frequency: 80Mhz
   -  Upload Speed: 115200
 
-## [Download esp8266-Radio.ino.generic.bin](https://github.com/esp8266-Radio.ino.generic.bin)
+## [Download esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp8266-Radio/raw/master/esp8266-Radio.ino.generic.bin)
 
-![nodemcu-flasher](https://raw.githubusercontent.com/tretyakovsa/Sonoff_WiFi_switch/master/tutorial/nodemcu-flasher.png)
+![nodemcu-flasher](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/nodemcu-flasher.png)
 ### NodeMCU Flasher
 https://github.com/nodemcu/nodemcu-flasher
 Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe) or [Win64](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win64/Release/ESP8266Flasher.exe).
@@ -20,7 +20,8 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 
 ### Schematic
 
-![alt](https://raw.githubusercontent.com/tretyakovsa/Sonoff_WiFi_switch/master/tutorial/sonoff.jpg)
+![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/esp8266_wiring.png)
+![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/schematic.png)
 
 ## Donation
 
