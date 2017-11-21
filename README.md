@@ -1,0 +1,45 @@
+# ESP8266 Radio
+
+# Upload instruction
+
+## Specification .bin files
+  -  Module: Generic ESP8266 Module
+  -  Flash Size: 1M(256K SPIFFS)
+  -  CPU Frequency: 160Mhz
+  -  Flash Mode: dio
+  -  Flash Frequency: 80Mhz
+  -  Upload Speed: 115200
+
+## [Download esp8266-Radio.ino.generic.bin](https://github.com/esp8266-Radio.ino.generic.bin)
+
+![nodemcu-flasher](https://raw.githubusercontent.com/tretyakovsa/Sonoff_WiFi_switch/master/tutorial/nodemcu-flasher.png)
+### NodeMCU Flasher
+https://github.com/nodemcu/nodemcu-flasher
+Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe) or [Win64](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win64/Release/ESP8266Flasher.exe).
+
+
+### Schematic
+
+![alt](https://raw.githubusercontent.com/tretyakovsa/Sonoff_WiFi_switch/master/tutorial/sonoff.jpg)
+
+## Donation
+
+If you like this project, you can give me a cup of coffee :)
+
+
+### Web Developer (Ренат К.)
+#### AdvCash
+
+- U 0586 7862 1354
+- E 8788 6352 1126
+- R 7705 0208 6566
+
+#### PayPal
+
+- [wul@inbox.lv](https://www.paypal.me/renat2985/5)
+
+#### WebMoney
+
+- Z242847016348
+- R466173026928
+- E555861976545
