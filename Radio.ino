@@ -14,12 +14,13 @@ void StatusCallback(void *cbData, int code, const char *string)
  Serial.printf("STATUS(%s) '%d' = '%s'\n", ptr, code, string);
  if (code == 3) {
   Serial.printf("Reconnect NUM!!");
-  mp3->stop();
-  file = new AudioFileSourceICYStream(URL);
-  buff = new AudioFileSourceBuffer(file, 2048);
-  out = new AudioOutputI2SNoDAC();
-  mp3 = new AudioGeneratorMP3();
-  mp3->begin(buff, out);
+  ESP.restart();
+  //mp3->stop();
+  //file = new AudioFileSourceICYStream(URL);
+  //buff = new AudioFileSourceBuffer(file, 2048);
+  //out = new AudioOutputI2SNoDAC();
+  //mp3 = new AudioGeneratorMP3();
+  //mp3->begin(buff, out);
  }
  Serial.flush();
 }
