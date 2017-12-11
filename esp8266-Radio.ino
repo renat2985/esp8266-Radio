@@ -5,10 +5,12 @@
 #include "WiFiManager.h"                // https://github.com/tzapu/WiFiManager
 
 #include <ESP8266WiFi.h>
-#include "AudioFileSourceICYStream.h"
-#include "AudioFileSourceBuffer.h"
-#include "AudioGeneratorMP3.h"
-#include "AudioOutputI2SNoDAC.h"
+#include "AudioFileSourceICYStream.h"   // https://github.com/earlephilhower/ESP8266Audio
+#include "AudioFileSourceBuffer.h"      // https://github.com/earlephilhower/ESP8266Audio
+#include "AudioGeneratorMP3.h"          // https://github.com/earlephilhower/ESP8266Audio
+//#include "AudioGeneratorAAC.h"          // https://github.com/earlephilhower/ESP8266Audio
+#include "AudioOutputI2SNoDAC.h"        // https://github.com/earlephilhower/ESP8266Audio
+
 
 // To run, set your ESP8266 build to 160MHz, update the SSID info, and upload.
 

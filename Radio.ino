@@ -13,7 +13,7 @@ void StatusCallback(void *cbData, int code, const char *string)
  const char *ptr = reinterpret_cast<const char *>(cbData);
  Serial.printf("STATUS(%s) '%d' = '%s'\n", ptr, code, string);
  if (code == 3) {
-  Serial.printf("Reconnect NUM!!");
+  Serial.printf("Buffering restart");
   ESP.restart();
   //mp3->stop();
   //file = new AudioFileSourceICYStream(URL);
@@ -27,7 +27,7 @@ void StatusCallback(void *cbData, int code, const char *string)
 
 void AUDIO_init(void) {
  file = new AudioFileSourceICYStream(URL);
- file->RegisterMetadataCB(MDCallback, (void*)"ICY");
+ //file->RegisterMetadataCB(MDCallback, (void*)"ICY");
  buff = new AudioFileSourceBuffer(file, 2048); // you can increase default 2048 bufffersize to 4096 (seems better) or 8192
  buff->RegisterStatusCB(StatusCallback, (void*)"buffer");
  out = new AudioOutputI2SNoDAC();
@@ -37,13 +37,13 @@ void AUDIO_init(void) {
 }
 
 void  handleAudio() {
- static int lastms = 0;
+ //static int lastms = 0;
  if (mp3->isRunning()) {
-  if (millis()-lastms > 1000) {
-   lastms = millis();
-   Serial.printf("Running for %d ms...\n", lastms);
-   Serial.flush();
-  }
+  //if (millis()-lastms > 1000) {
+  // lastms = millis();
+  // Serial.printf("Running for %d ms...\n", lastms);
+  // Serial.flush();
+  //}
   if (!mp3->loop()) mp3->stop();
  } else {
   Serial.printf("MP3 done\n");
