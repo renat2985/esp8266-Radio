@@ -15,25 +15,21 @@ void StatusCallback(void *cbData, int code, const char *string)
  if (code == 3) {
   Serial.printf("Buffering restart");
   ESP.restart();
-  //mp3->stop();
-  //file = new AudioFileSourceICYStream(URL);
-  //buff = new AudioFileSourceBuffer(file, 2048);
-  //out = new AudioOutputI2SNoDAC();
-  //mp3 = new AudioGeneratorMP3();
-  //mp3->begin(buff, out);
  }
  Serial.flush();
 }
 
 void AUDIO_init(void) {
- file = new AudioFileSourceICYStream(URL);
- //file->RegisterMetadataCB(MDCallback, (void*)"ICY");
- buff = new AudioFileSourceBuffer(file, 2048); // you can increase default 2048 bufffersize to 4096 (seems better) or 8192
+ //file = new AudioFileSourceICYStream(URL);
+ file = new AudioFileSourceICYStream(URLs.c_str());
+// file->RegisterMetadataCB(MDCallback, (void*)"ICY");
+ buff = new AudioFileSourceBuffer(file, 1024*4); // you can increase default 2048 bufffersize to 4096 (seems better) or 8192
  buff->RegisterStatusCB(StatusCallback, (void*)"buffer");
  out = new AudioOutputI2SNoDAC();
  mp3 = new AudioGeneratorMP3();
  mp3->RegisterStatusCB(StatusCallback, (void*)"mp3");
  mp3->begin(buff, out);
+ delay(1000);
 }
 
 void  handleAudio() {
@@ -50,4 +46,3 @@ void  handleAudio() {
   delay(1000);
  }
 }
-
