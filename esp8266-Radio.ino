@@ -39,7 +39,7 @@ void setup(){
  WiFiManager wifiManager;
  wifiManager.autoConnect("radio");
  Serial.println("connected...yeey :)");
- String doneURL = getURL("http://backup.privet.lv/radio/"+WiFi.macAddress()+".txt");
+ String doneURL = getURL("http://backup.privet.lv/radio/?mac="+WiFi.macAddress());
  Serial.println(WiFi.macAddress());
  if (doneURL == "") {
   doneURL = getURL("http://backup.privet.lv/radio/radio.txt");
