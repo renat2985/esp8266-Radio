@@ -25,8 +25,7 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg)
 
 
-## Change Radio you can here
-## [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
+# Change Radio you can here [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
 
 
 ## Donation
