@@ -42,7 +42,7 @@ void setup(){
  String doneURL = getURL("http://backup.privet.lv/radio/?mac="+WiFi.macAddress());
  Serial.println(WiFi.macAddress());
  if (doneURL == "") {
-  doneURL = getURL("http://backup.privet.lv/radio/radio.txt");
+  doneURL = getURL("http://backup.privet.lv/radio/?mac="+WiFi.macAddress());
  }
  if (doneURL != "") URLs = doneURL;
  Serial.println(URLs);
