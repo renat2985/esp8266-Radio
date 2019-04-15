@@ -28,6 +28,7 @@
  <script>
   var ajax = {};
   ajax.x = function(){var xhr;if (window.XMLHttpRequest){xhr = new XMLHttpRequest();}else{xhr = new ActiveXObject("Microsoft.XMLHTTP");}return xhr;};
+  ajax.send = function(url,callback,method,data,async){if (method != 'PUT') {}if (async === undefined) {async = true;}var x = ajax.x();x.open((method=='PUT'?'GET':''+method+''),url,async);x.onreadystatechange = function () {if (x.readyState == 4) {if (method != 'PUT') {}callback(x.responseText)}};if (method == 'POST') {x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');}x.send(data)};
   ajax.get = function(url,data,callback,async){var query = [];for (var key in data) {query.push(encodeURIComponent(key)+'='+encodeURIComponent(data[key]));}ajax.send(url+(query.length?'?'+query.join('&'):''),callback,'GET',null,async)};
   function loadWifi(id){
    document.getElementById(id).innerHTML = '<option>Loading...</option>';
