@@ -42,12 +42,6 @@
     jsonWifi.networks.sort(function(a,b){return (a.dbm < b.dbm)?1:((b.dbm < a.dbm)?-1:0);});
     var html = '';
     for(var i = 0;i<jsonWifi.networks.length;i++) {
-     var wifiSignal = '';
-     if (jsonWifi.networks[i].dbm <= -0) { wifiSignal = '0-60';}
-     if (jsonWifi.networks[i].dbm <= -60) { wifiSignal = '60-70';}
-     if (jsonWifi.networks[i].dbm <= -70) { wifiSignal = '70-80';}
-     if (jsonWifi.networks[i].dbm <= -80) { wifiSignal = '80-90';}
-     if (jsonWifi.networks[i].dbm <= -90) { wifiSignal = '90-100';}
      html += '<option value="'+jsonWifi.networks[i].ssid+'" '+(livessid==jsonWifi.networks[i].ssid?'selected':'')+'>'+jsonWifi.networks[i].ssid+'</option>';
     }
     document.getElementById(id).innerHTML = (html?html:'<option>Not found WiFi</option>');
