@@ -1,14 +1,16 @@
 # ESP8266 Radio
 
+# Change Radio you can here [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
+
 # Upload instruction
 
 ### Specification .bin files
   -  Module: Generic ESP8266 Module
-  -  Flash Size: 1M(256K SPIFFS)
+  -  Flash Size: 1M
   -  CPU Frequency: 160Mhz
   -  Flash Mode: dio
   -  Flash Frequency: 80Mhz
-  -  Upload Speed: 115200
+  -  Upload Speed: 921600
 
 ## [Download esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp8266-Radio/raw/master/esp8266-Radio.ino.generic.bin)
 
@@ -23,9 +25,6 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/esp8266_wiring.png)
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/schematic.png)
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg)
-
-
-# Change Radio you can here [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
 
 
 ## Donation
