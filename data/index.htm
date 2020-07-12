@@ -6,19 +6,19 @@
   <title>WiFi Connect</title>
  </head>
  <style>
-  div{width:360px;padding:8% 0 0;margin:auto}
-  form{background:#FFF;max-width:360px;margin:0 auto 100px;padding:45px;text-align:center;box-shadow:0 0 20px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.24)}
+  div{width:360px;padding:8% 0 0;margin:auto;text-align:center}
+  form{background:#FFF;max-width:360px;margin:0 auto 100px;padding:45px;box-shadow:0 0 20px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.24)}
   input,select{background:#f2f2f2;width:100%;border:0;margin:0 0 15px;padding:15px;box-sizing:border-box;font-size:14px}
-  .button{text-transform:uppercase;background:#4CAF50;width:100%;border:0;padding:15px;color:#FFF;font-size:14px;transition:all .3 ease;cursor:pointer}
-  form .button:hover,form .button:active,form .button:focus{background:#43A047}
-  p{margin:15px 0 0;color:#b3b3b3;font-size:12px}
-  p a{color:#4CAF50;text-decoration:none}
-  body{background:#8DC26F;font-family:sans-serif}
+  .button{text-transform:uppercase;background:#5B2500;width:100%;border:0;padding:15px;color:#FFF;font-size:14px;transition:all .3 ease;cursor:pointer}
+  form .button:hover,form .button:active,form .button:focus{background:#C44F00}
+  p{margin:15px 0 0;color:#333333;font-size:12px}
+  p a{color:#5B2500;text-decoration:none}
+  body{background:#C44F00;font-family:sans-serif}
  </style>
  <body>
   <div>
-   <form action="login.html" method="GET">
-    <select name="wifi" id="wifi"></select>
+   <form>
+    <select name="wifi" id="wifi"><option>Loading...</option></select>
     <input type="text" name="pass" id="pass" placeholder="Password"/>
     <input type="button" class="button" value="Connect" onclick="this.value='Loading...';send_get();">
     <p>Source link: <a href="https://github.com/renat2985/esp8266-Radio">GitHub</a></p>
@@ -31,7 +31,6 @@
   ajax.send = function(url,callback,method,data,async){if (method != 'PUT') {}if (async === undefined) {async = true;}var x = ajax.x();x.open((method=='PUT'?'GET':''+method+''),url,async);x.onreadystatechange = function () {if (x.readyState == 4) {if (method != 'PUT') {}callback(x.responseText)}};if (method == 'POST') {x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');}x.send(data)};
   ajax.get = function(url,data,callback,async){var query = [];for (var key in data) {query.push(encodeURIComponent(key)+'='+encodeURIComponent(data[key]));}ajax.send(url+(query.length?'?'+query.join('&'):''),callback,'GET',null,async)};
   function loadWifi(id){
-   document.getElementById(id).innerHTML = '<option>Loading...</option>';
    ajax.get('wifi.scan.json',{},function(response) {
     var jsonWifi=JSON.parse(response);
     jsonWifi.networks.sort(function(a,b){return (a.dbm < b.dbm)?1:((b.dbm < a.dbm)?-1:0);});
@@ -46,7 +45,7 @@
   function send_get(id){
    ajax.get('/ssid?ssid='+document.getElementById('wifi').options[document.getElementById('wifi').selectedIndex].value+'&ssidPass='+document.getElementById('pass').value,{},function(responses){
     var response=JSON.parse(response);
-    setTimeout(function(){location.href="http://backup.privet.lv/radio/#"+response.mac} , 10000);
+    setTimeout(function(){location.href="http://backup.privet.lv/radio/#"+response.mac}, 10000);
    },true);
   }
  </script>
