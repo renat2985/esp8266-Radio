@@ -36,7 +36,7 @@
     jsonWifi.networks.sort(function(a,b){return (a.dbm < b.dbm)?1:((b.dbm < a.dbm)?-1:0);});
     var html = '';
     for(var i = 0;i<jsonWifi.networks.length;i++) {
-     html += '<option value="'+jsonWifi.networks[i].ssid+'">'+jsonWifi.networks[i].ssid+'</option>';
+     html += '<option value="'+jsonWifi.networks[i].ssid+'" '+(livessid==jsonWifi.networks[i].ssid?'selected':'')+'>'+jsonWifi.networks[i].ssid+'</option>';
     }
     document.getElementById(id).innerHTML = (html?html:'<option>Not found WiFi</option>');
    },true);
