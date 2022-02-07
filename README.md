@@ -27,21 +27,17 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg)
 
 
-## Donation
+## :battery: Donation
 
-If you like this project, you can give me a cup of coffee :)
+If you like this project, you can give me a cup of coffee :coffee:
 
+#### Bitcoin:
 
-### Web Developer (Ренат К.)
-#### AdvCash
-
-- U 0586 7862 1354
-- E 8788 6352 1126
-- R 7705 0208 6566
+- 19xg6pA4RzSW3o4ZUyTyn5t4tY3tqLXHbe
 
 #### PayPal
 
-- [wul@inbox.lv](https://www.paypal.me/renat2985/5)
+- [https://www.paypal.me/RKevrels](https://www.paypal.me/RKevrels/5)
 
 #### WebMoney
 
