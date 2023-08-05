@@ -5,12 +5,14 @@
 # Upload instruction
 
 ### Specification .bin files
+```
   -  Module: Generic ESP8266 Module
   -  Flash Size: 1M
   -  CPU Frequency: 160Mhz
   -  Flash Mode: dio
   -  Flash Frequency: 80Mhz
   -  Upload Speed: 921600
+```
 
 ## [Download esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp8266-Radio/raw/master/esp8266-Radio.ino.generic.bin)
 
@@ -22,7 +24,7 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 
 ### Schematic
 
-![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/esp8266_wiring.png)
+![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png)
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/schematic.png)
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg)
 
@@ -38,9 +40,3 @@ If you like this project, you can give me a cup of coffee :coffee:
 #### PayPal
 
 - [https://www.paypal.me/RKevrels](https://www.paypal.me/RKevrels/5)
-
-#### WebMoney
-
-- Z242847016348
-- R466173026928
-- E555861976545
