@@ -1,6 +1,10 @@
 # ESP8266 Radio
 
-# Change Radio you can here [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
+# Change Radio you can here 
+
+NEW: [http://www.onclick.lv/radio/](http://www.onclick.lv/radio/)
+
+OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
 
 # Upload instruction
 
