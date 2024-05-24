@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radio</title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="wrapper">
+    <div class="header">
+      <ul class="menu">
+        <li><a href="#" onclick="translator.translatePageTo('ru');" style="color:#fff;font-weight:bold;font-size:25px;">RU</a></li>
+        <li><a href="#" onclick="translator.translatePageTo('en');" style="color:#fff;font-weight:bold;font-size:25px;">EN</a></li>
+        <li><a href="https://github.com/renat2985/esp8266-Radio" style="color:#fff"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
+        <li><a href="#" onclick="tidioChatApi.display(true);tidioChatApi.open();tidioChatApi.messageFromVisitor('Мне нужна помощь с Радио');" style="color:#fff"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></a></li>
+      </ul>
+      <div class="content">
+        <h2 style="display:block" id="search-mac" data-i18n="connect"></h2>
+        <form name="test" method="post" id="find-mac" action="http://backup.privet.lv/radio/index.php" style="text-align: center;display:none">
+          <h2 data-i18n="change"></h2>
+          <input class="btn button" name="mac" id="mac" type="text" pattern="[A-F0-9:]{17}" placeholder="Пример: 2C:3A:E8:3D:9D:80" required="" style="opacity: 0.5;">
+          <select class="btn button" name="radio-list" id="radio-list" onchange="setRadio(this)">
+            <option value="http://ep64server.streamr.ru:8033/europaplus64.mp3" selected="">Выберите радио станцию</option>
+            <option value="http://ep64server.streamr.ru:8033/europaplus64.mp3">Europa +</option>
+            <option value="http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_64kbps">Вести FM</option>
+            <option value="http://ic3.101.ru:8000/r3_1">Авторадио</option>
+            <option value="http://nashe.streamr.ru/nashe-64.mp3">Наше радио</option>
+            <option value="http://dorognoe.hostingradio.ru:8000/dorognoe">Дорожное</option>
+            <option value="http://icecast.vgtrk.cdnvideo.ru/mayakfm_mp3_64kbps">Маяк</option>
+            <option value="http://ice912.echo.msk.ru:9120/stream">Эхо Моксвы</option>
+            <option value="http://audio1.video.ria.ru/voicerus">Голос Росии</option>
+            <option value="http://jazz.streamr.ru/jazz-64.mp3">Джаз FM</option>
+            <option value="http://nashe.streamr.ru/nashe20-64.mp3">Наше 2.0</option>
+            <option value="http://air.radiorecord.ru:8102/sd90_64">Радио Рекорд</option>
+            <option value="othe">Добавить свой линк на радио</option>
+          </select>
+          <input class="btn button" name="radio" type="url" id="radio" style="width:320px;display:none" value="http://ep64server.streamr.ru:8033/europaplus64.mp3" required="">
+          <a id="play-pause-button" class="fa fa-play" style="cursor:pointer;"> Play</a>
+          <br>
+          <input class="btn button" type="submit" data-i18n="save" data-i18n-attr="value" value="">
+        </form>
+
+        <h5 style="margin-top:10px;color:#fff;text-align: right;">
+          <b data-i18n="donate"></b>
+          <br>
+          <b>Bitcoin</b><sup>(BTC)</sup>: 19xg6pA4RzSW3o4ZUyTyn5t4tY3tqLXHbe<br>
+          <b>TonCoin</b><sup>(TON)</sup>: UQBY_xXK_25L-UHq_h2ocfhS0c_lZoA4PIHxt-SktxLa_So7
+        </h5>
+
+      </div>
+
+
+
+      <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/line-logo.svg">
+      <img class="curve" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/bottom-curve_copy.svg">
+      <img class="waves" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/waves_copy.svg">
+    </div>
+  </div>
+  <div class="background"></div>
+
+  <!-- partial -->
+  <script src="//code.tidio.co/ydhdvlf6aykdakmpvyziz3ry0ffsbohh.js"></script>
+  <script src="http://unpkg.com/@andreasremdt/simple-translator@2.0.4/dist/umd/translator.min.js"></script>
+  <audio id="player" src="http://ep64server.streamr.ru:8033/europaplus64.mp3"></audio>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var audio = document.getElementById("player");
+    $('#play-pause-button').on("click", function() {
+      document.getElementById("player").src = $("#radio").val();
+      if ($(this).hasClass('fa-play')) {
+        $(this).removeClass('fa-play');
+        $(this).addClass('fa-pause');
+        this.innerHTML = ' Pause';
+        audio.play();
+      } else {
+        $(this).removeClass('fa-pause');
+        $(this).addClass('fa-play');
+        this.innerHTML = ' Play';
+        audio.pause();
+      }
+    });
+    audio.onended = function() {
+      $("#play-pause-button").removeClass('fa-pause');
+      $("#play-pause-button").addClass('fa-play');
+    };
+    function setRadio(sel) {
+      sel = sel.options[sel.selectedIndex].value;
+      $('#play-pause-button').removeClass('fa-pause');
+      $('#play-pause-button').addClass('fa-play');
+      $('#play-pause-button').html(' Play');
+      audio.pause();
+      if (sel == 'othe') {
+        document.getElementById('radio-list').style.display = 'none';
+        document.getElementById('radio').style.display = 'inline';
+        document.getElementById('max-kbps').innerHTML = '(max 64Kbps)';
+      } else {
+        $('#radio').val(sel);
+      }
+    }
+
+    function fetchData() {
+      fetch('http://backup.privet.lv/radio/search.php?' + Math.random())
+
+      .then((response) => response.json())
+      .then((data) => {
+        if (data != "") {
+          $("#search-mac").css("display", "none");
+          $("#find-mac").css("display", "block");
+          $("#mac").val(data[0].mac);
+        }
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении данных:', error);
+      });
+    }
+    setInterval(fetchData, 3000);
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Находим форму по ее идентификатору
+      var form = document.getElementById('find-mac');
+
+      // Прикрепляем обработчик к событию submit
+      form.addEventListener('submit', function(event) {
+        // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+        event.preventDefault();
+
+        // Подготовка данных формы для отправки
+        var formData = new FormData(form);
+
+        // Создаем объект XMLHttpRequest для отправки данных
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+
+        // Определяем функцию, которая будет вызвана при изменении состояния запроса
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            // Обработка ответа от сервера, например:
+            //alert('Сохранили, перезагрузите ESP!');
+            Swal.fire({
+              title: "Все получилось!",
+              text: "Перезагрузите ESP!",
+              icon: "success"
+            });
+          }
+        };
+
+        // Отправляем данные формы
+        xhr.send(formData);
+      });
+
+      translator = new Translator({
+        defaultLanguage: 'ru',
+        detectLanguage: true,
+        selector: '[data-i18n]',
+        debug: false,
+        registerGlobally: '__',
+        persist: true,
+        persistKey: 'preferred_language',
+        filesLocation: './locale',
+      });
+      translator.fetch(['en',
+        'ru']).then(() => {
+        translator.translatePageTo();
+      });
+    });
+  </script>
+</body>
+</html>
