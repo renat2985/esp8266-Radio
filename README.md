@@ -10,31 +10,25 @@ NEW: [http://www.onclick.lv/radio/](http://www.onclick.lv/radio/)
 OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
 
 # Upload instruction
+## Web installer (recommended):
+### [https://renat2985.github.io/esp8266-Radio/](https://renat2985.github.io/esp8266-Radio/)
 
-
-
-## Web installer (recommended)
-## [https://renat2985.github.io/esp8266-Radio/](https://renat2985.github.io/esp8266-Radio/)
-
-### Specification .bin files
+## Or NodeMCU Flasher:
+Specification [esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp8266-Radio/raw/master/esp8266-Radio.ino.generic.bin) files
 ```
   -  Module: Generic ESP8266 Module
   -  Flash Size: 1M
   -  CPU Frequency: 160Mhz
-  -  Flash Mode: dio
   -  Flash Frequency: 80Mhz
-  -  Upload Speed: 921600
 ```
 
-## [Download esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp8266-Radio/raw/master/esp8266-Radio.ino.generic.bin)
-
 ![nodemcu-flasher](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/nodemcu-flasher.png)
-### NodeMCU Flasher
+
 https://github.com/nodemcu/nodemcu-flasher
 Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe) or [Win64](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win64/Release/ESP8266Flasher.exe).
 
 
-### Schematic
+# Schematic
 
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png)
 ![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/schematic.png)
