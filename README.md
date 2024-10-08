@@ -18,21 +18,20 @@ Specification [esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp82
 ```
   -  Module: Generic ESP8266 Module
   -  Flash Size: 1M
-  -  CPU Frequency: 160Mhz
   -  Flash Frequency: 80Mhz
 ```
 
-![nodemcu-flasher](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/nodemcu-flasher.png)
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/nodemcu-flasher.png" width="400px">
+
 
 https://github.com/nodemcu/nodemcu-flasher
 Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe) or [Win64](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win64/Release/ESP8266Flasher.exe).
 
 
 # Schematic
-
-![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png)
-![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/schematic.png)
-![alt](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg)
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png" width="400px">
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/schematic.png" width="400px">
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg" width="400px">
 
 
 ## :battery: Donation
