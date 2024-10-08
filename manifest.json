@@ -1,0 +1,13 @@
+{
+  "name": "Web Radio",
+  "version": "1.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP8266",
+      "parts": [
+        { "path": "./esp8266-Radio.ino.generic.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

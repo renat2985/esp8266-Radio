@@ -11,6 +11,11 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
 
 # Upload instruction
 
+
+
+## Web installer (recommended)
+## [https://renat2985.github.io/esp8266-Radio/](https://renat2985.github.io/esp8266-Radio/)
+
 ### Specification .bin files
 ```
   -  Module: Generic ESP8266 Module
