@@ -13,28 +13,28 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
 # How it works:
 1.	**After turning on the device:**
 
-  - A Wi-Fi network named “Radio” will be created.
-  - Connect to this network from your device.
+    - A Wi-Fi network named “Radio” will be created.
+    - Connect to this network from your device.
 
-    <img src="https://github.com/renat2985/esp8266-Radio/blob/main/tutorial/wifi.png" height="300px">
+      <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/wifi.png" height="300px">
 
 3.	**Setting up the connection:**
      
-  - Enter the name of your router and its password.
-  - This completes the main setup process.
+    - Enter the name of your router and its password.
+    - This completes the main setup process.
 
-    <img src="https://github.com/renat2985/esp8266-Radio/blob/main/tutorial/ap2.png" height="300px">
+      <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/ap2.png" height="300px">
   
 5.	**Choosing a radio station:**
      
-  - Go to the website [http://www.onclick.lv/radio/](http://www.onclick.lv/radio/)
-  - Select the radio station you want to listen to.
+    - Go to the website [http://www.onclick.lv/radio/](http://www.onclick.lv/radio/)
+    - Select the radio station you want to listen to.
 
 # Upload instruction
-## Web installer (recommended):
+## 🚀 Web installer (recommended):
 ### [https://renat2985.github.io/esp8266-Radio/](https://renat2985.github.io/esp8266-Radio/)
 
-## Or NodeMCU Flasher:
+### Or NodeMCU Flasher:
 Specification [esp8266-Radio.ino.generic.bin](https://github.com/renat2985/esp8266-Radio/raw/master/esp8266-Radio.ino.generic.bin) files
 ```
   -  Module: Generic ESP8266 Module
