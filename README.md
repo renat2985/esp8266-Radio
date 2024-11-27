@@ -19,7 +19,8 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
       <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/wifi.png" height="300px">
 
 3.	**Setting up the connection:**
-     
+
+    - Open a browser and enter the address http://192.168.4.1 to access the web interface.
     - Enter the name of your router and its password.
     - This completes the main setup process.
 
