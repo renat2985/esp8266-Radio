@@ -51,7 +51,7 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 
 
 # Schematic NodeMCU / Wemos / ESP8266 01
-<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png" height="200px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/Wemos_schematic.png" height="200px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/esp8266_schematic.png" height="200px">
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png" height="250px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/Wemos_schematic.png" height="250px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/esp8266_schematic.png" height="250px">
 <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg" width="400px">
 
 
