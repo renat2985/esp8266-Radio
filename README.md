@@ -1,4 +1,4 @@
-# ESP8266 Radio
+# Easy esp8266 Internet Radio (MP3 Stream) 
 
 ![video](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/video.gif)
 
@@ -24,7 +24,7 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
     - Enter the name of your router and its password.
     - This completes the main setup process.
 
-      <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/ap2.png" height="300px">
+      <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/ap2.png" width="400px">
   
 5.	**Choosing a radio station:**
      
