@@ -1,67 +1,70 @@
 #include <Arduino.h>
 
-#include "ESP8266WebServer.h"           // Содержится в пакете.
-#include "DNSServer.h"                  // Содержится в пакете.
-#include "WiFiManager.h"                // https://github.com/tzapu/WiFiManager
-
+#ifdef ESP8266
 #include <ESP8266WiFi.h>
-#include "AudioFileSourceICYStream.h"   // https://github.com/earlephilhower/ESP8266Audio
-#include "AudioFileSourceBuffer.h"      // https://github.com/earlephilhower/ESP8266Audio
-#include "AudioGeneratorMP3.h"          // https://github.com/earlephilhower/ESP8266Audio
-//#include "AudioGeneratorAAC.h"          // https://github.com/earlephilhower/ESP8266Audio
-#include "AudioOutputI2SNoDAC.h"        // https://github.com/earlephilhower/ESP8266Audio
-
-#include <ESP8266HTTPClient.h>       //Содержится в пакете
+#include <ESP8266HTTPClient.h>
+#include <ESP8266WebServer.h>
+#include "DNSServer.h"
 WiFiClient wclient;
-// To run, set your ESP8266 build to 160MHz, update the SSID info, and upload.
+#elif defined(ESP32)
+#include <esp_system.h>  // Для управления частотой процессора ESP32
+#include <esp_clk.h>     // Для проверки текущей частоты
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <WebServer.h>
+#include <DNSServer.h>
+WiFiClient wclient;
+#endif
+
+#include "WiFiManager.h"  // https://github.com/tzapu/WiFiManager
+
+#include "AudioFileSourceICYStream.h"
+#include "AudioFileSourceBuffer.h"
+#include "AudioGeneratorMP3.h"
+#include "AudioOutputI2SNoDAC.h"
 
 // Randomly picked URL
 //http://kpradio.hostingradio.ru:8000/
-//http://radio.horoshee.fm:8000/mp3
-//http://kpradio.hostingradio.ru:8000/russia.radiokp128.mp3
-//const char *URL = "http://ic6.101.ru:8000/p933259";
-//const char *URL = "http://icecast.russkoeradio.cdnvideo.ru:8000/rr_m.mp3";
-//const char *URL = "http://music.myradio.ua/rep128.mp3";
-//const char *URL = "http://jazz.streamr.ru/jazz-128.mp3";
-//const char *URL = "http://87.110.219.34:8000/swhmp3";
-//const char *URL = "http://87.110.219.34:8000/plusmp3";
-//const char *URL = "http://91.90.255.111:80/MixFM_96"; //GOOD
-//const char *URL = "https://nashe1.hostingradio.ru:18000/nashe20-64.mp3";
-String URLs= "http://jazz.streamr.ru/jazz-64.mp3";
+String URLs = "http://ep64server.streamr.ru:8033/europaplus64.mp3";
 AudioGeneratorMP3 *mp3;
 AudioFileSourceICYStream *file;
 AudioFileSourceBuffer *buff;
 AudioOutputI2SNoDAC *out;
 
-void setup(){
- system_update_cpu_freq(SYS_CPU_160MHZ);
- Serial.begin(115200);
- WiFiManager wifiManager;
- wifiManager.autoConnect("radio");
- Serial.println("connected...yeey :)");
- String doneURL = getURL("http://backup.privet.lv/radio/?mac="+WiFi.macAddress());
- Serial.println(WiFi.macAddress());
- if (doneURL == "") {
-  doneURL = getURL("http://backup.privet.lv/radio/?mac="+WiFi.macAddress());
- }
- if (doneURL != "") URLs = doneURL;
- Serial.println(URLs);
- AUDIO_init();
+void setup() {
+#ifdef ESP8266
+  system_update_cpu_freq(SYS_CPU_160MHZ);
+#elif defined(ESP32)
+  //setCpuFrequencyMhz(240);  // Вы можете заменить 240 на 80, 160 или 240
+#endif
+  Serial.begin(115200);
+  WiFiManager wifiManager;
+  wifiManager.autoConnect("radio");
+  Serial.println("connected...yeey :)");
+  String doneURL = getURL("http://backup.privet.lv/radio/?mac=" + WiFi.macAddress());
+  Serial.println(WiFi.macAddress());
+  if (doneURL == "") {
+    doneURL = getURL("http://backup.privet.lv/radio/?mac=" + WiFi.macAddress());
+  }
+  if (doneURL != "") URLs = doneURL;
+  Serial.println(URLs);
+  AUDIO_init();
 }
 
-void loop(){
- handleAudio();
+void loop() {
+  handleAudio();
 }
 
 // ------------- Запрос на удаленный URL -----------------------------------------
 String getURL(String urls) {
- String answer;
- HTTPClient http;
- http.begin(urls); //HTTP
- int httpCode = http.GET();
- if (httpCode == HTTP_CODE_OK) { // если сервер вернул данные
-  answer = http.getString(); // Данные здесь
- }
- http.end();
- return answer;
+  String answer;
+  HTTPClient http;
+  WiFiClient client;         // Create a WiFiClient object
+  http.begin(client, urls);  // Use the new API
+  int httpCode = http.GET();
+  if (httpCode == HTTP_CODE_OK) {  // If the server returns data
+    answer = http.getString();     // Data is here
+  }
+  http.end();
+  return answer;
 }

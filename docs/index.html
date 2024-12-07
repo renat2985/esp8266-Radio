@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet"><link rel="stylesheet" href="./style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/kjua@0.10.0/dist/kjua.min.js"></script>
 
 </head>
 <body>
@@ -13,29 +14,29 @@
   <div class="wrapper">
     <div class="header">
       <ul class="menu">
-        <li><a href="#" onclick="translator.translatePageTo('ru');" style="color:#fff;font-weight:bold;font-size:25px;">RU</a></li>
-        <li><a href="#" onclick="translator.translatePageTo('en');" style="color:#fff;font-weight:bold;font-size:25px;">EN</a></li>
+        <li><a href="#" onclick="translator.translatePageTo('ru');" style="color:#85a5ff;font-size:15px;background-color: #fff;border-radius: 10px;font-weight: bold;padding: 10px;">RU</a></li>
+        <li><a href="#" onclick="translator.translatePageTo('en');" style="color:#85a5ff;font-size:15px;background-color: #fff;border-radius: 10px;font-weight: bold;padding: 10px;">EN</a></li>
         <li><a href="https://github.com/renat2985/esp8266-Radio" style="color:#fff"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
         <li><a href="#" onclick="tidioChatApi.display(true);tidioChatApi.open();tidioChatApi.messageFromVisitor('Мне нужна помощь с Радио');" style="color:#fff"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></a></li>
       </ul>
       <div class="content">
-        <h2 style="display:block" id="search-mac" data-i18n="connect"></h2>
+        <h2 style="display:block;height: 200px;" id="search-mac" data-i18n="connect"></h2>
         <form name="test" method="post" id="find-mac" action="http://backup.privet.lv/radio/index.php" style="text-align: center;display:none">
           <h2 data-i18n="change"></h2>
           <input class="btn button" name="mac" id="mac" type="text" pattern="[A-F0-9:]{17}" placeholder="Пример: 2C:3A:E8:3D:9D:80" required="" style="opacity: 0.5;">
           <select class="btn button" name="radio-list" id="radio-list" onchange="setRadio(this)">
             <option value="http://ep64server.streamr.ru:8033/europaplus64.mp3" selected="">Выберите радио станцию</option>
-            <option value="http://ep64server.streamr.ru:8033/europaplus64.mp3">Europa +</option>
-            <option value="http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_64kbps">Вести FM</option>
-            <option value="http://ic3.101.ru:8000/r3_1">Авторадио</option>
-            <option value="http://nashe.streamr.ru/nashe-64.mp3">Наше радио</option>
-            <option value="http://dorognoe.hostingradio.ru:8000/dorognoe">Дорожное</option>
-            <option value="http://icecast.vgtrk.cdnvideo.ru/mayakfm_mp3_64kbps">Маяк</option>
-            <option value="http://ice912.echo.msk.ru:9120/stream">Эхо Моксвы</option>
-            <option value="http://audio1.video.ria.ru/voicerus">Голос Росии</option>
-            <option value="http://jazz.streamr.ru/jazz-64.mp3">Джаз FM</option>
-            <option value="http://nashe.streamr.ru/nashe20-64.mp3">Наше 2.0</option>
-            <option value="http://air.radiorecord.ru:8102/sd90_64">Радио Рекорд</option>
+          <option value="http://ep64server.streamr.ru:8033/europaplus64.mp3">Europa +</option>
+          <option value="http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_64kbps">Вести FM</option>
+          <option value="http://ic7.101.ru:8000/v1_1">ENERGY</option>
+          <option value="http://nashe.streamr.ru/nashe-64.mp3">Наше радио</option>
+          <option value="http://dorognoe.hostingradio.ru:8000/dorognoe">Дорожное</option>
+          <option value="http://icecast.vgtrk.cdnvideo.ru/mayakfm_mp3_64kbps">Маяк</option>
+          <option value="http://shoutcast.radio24.it:8000/listen.mp3">Radio 24 (Италия)</option>
+          <option value="http://live.alpha.by:7000/tuner_gomel">Гомель ФМ</option>
+          <option value="http://jazz.streamr.ru/jazz-64.mp3">Джаз FM</option>
+          <option value="http://nashe.streamr.ru/nashe20-64.mp3">Наше 2.0</option>
+          <option value="http://ep64server.streamr.ru:8033/europaplus64.mp3">Радио Рекорд</option>
             <option value="othe">Добавить свой линк на радио</option>
           </select>
           <input class="btn button" name="radio" type="url" id="radio" style="width:320px;display:none" value="http://ep64server.streamr.ru:8033/europaplus64.mp3" required="">
@@ -44,12 +45,40 @@
           <input class="btn button" type="submit" data-i18n="save" data-i18n-attr="value" value="">
         </form>
 
-        <h5 style="margin-top:10px;color:#fff;text-align: right;">
+        <h5 style="margin-top:10px;color:#fff;text-align: center;">
           <b data-i18n="donate"></b>
           <br>
-          <b>Bitcoin</b><sup>(BTC)</sup>: 19xg6pA4RzSW3o4ZUyTyn5t4tY3tqLXHbe<br>
-          <b>TonCoin</b><sup>(TON)</sup>: UQBY_xXK_25L-UHq_h2ocfhS0c_lZoA4PIHxt-SktxLa_So7
+          <b id="qrcode-sol"></b><b id="qrcode-ton"></b><b id="qrcode-dog"></b>
         </h5>
+
+
+
+  <script>
+    function generateQRCode(elementId, text, label) {
+      const qrCode = kjua({
+        render: 'svg',           // Рендер в формате SVG для четкости
+        text: text,
+        mode: 'label',
+        size: 100,               // Фиксированный размер
+        fill: '#ffffff',         // Цвет фона
+        back: 'transparent',         // Цвет QR-кода
+        ecLevel: 'M',             // Уровень коррекции ошибок
+        crisp: false,
+        label: label,
+        fontcolor: '#ffffff',
+        mSize: 13,
+        mPosX: 40,
+        mPosY: 0,
+        fontname: 'Arial',
+        // quiet zone in modules
+        quiet: 5,
+      });
+      document.getElementById(elementId).appendChild(qrCode);
+    }
+    generateQRCode('qrcode-ton', 'ton://transfer/UQA9lGYD6b4gRBdEvPzLXdm4fIWVAhyyi49N-o-bdoAegPDf', 'TonCoin (TON)');
+    generateQRCode('qrcode-sol', 'solana:936wogeVNTJYAqPTWuAHy1DEw6bivJDGV9gDLMA4qP5r', 'Solana (SOL)');
+    generateQRCode('qrcode-dog', 'DG5JFsUuE26yx1CJafxPEEmJmwjKpDQmed', 'DogeCoin');
+  </script>
 
       </div>
 

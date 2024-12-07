@@ -32,7 +32,7 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
     - Select the radio station you want to listen to.
 
 # Upload instruction
-## 🚀 Web installer (recommended):
+## 🚀 Web installer (recommended for ESP8266, ESP32, ESP32s3):
 ### [https://renat2985.github.io/esp8266-Radio/](https://renat2985.github.io/esp8266-Radio/)
 
 ### Or NodeMCU Flasher:
@@ -53,6 +53,10 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 # Schematic NodeMCU / Wemos / ESP8266 01
 <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU_schematic.png" height="250px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/Wemos_schematic.png" height="250px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/esp8266_schematic.png" height="250px">
 <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg" width="400px">
+
+# Schematic NodeMCU ESP32
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU32_schematic.png" height="250px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU32b_schematic.png" height="250px">
+
 
 
 ## :battery: Donation
