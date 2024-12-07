@@ -1,6 +1,6 @@
 {
-  "connect": "Connect your audio device to the router...<br>Try turning the power off and on again...<br><br>",
+  "connect": "<p class=\"fade\">Connect your audio device to the router...</p><p class=\"fade\" style=\"animation-delay: 5s;\">Try turning the power off and on again...</p><br>",
   "change": "You can now add a new radio station to your ESP.",
-  "save": "Save to ESP8266",
+  "save": "Save radio",
   "donate": "If you like this project, you can buy me a cup of coffee ☕"
 }

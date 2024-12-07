@@ -31,6 +31,7 @@ AudioFileSourceICYStream *file;
 AudioFileSourceBuffer *buff;
 AudioOutputI2SNoDAC *out;
 
+
 void setup() {
 #ifdef ESP8266
   system_update_cpu_freq(SYS_CPU_160MHZ);
@@ -39,7 +40,9 @@ void setup() {
 #endif
   Serial.begin(115200);
   WiFiManager wifiManager;
-  wifiManager.autoConnect("radio");
+  wifiManager.setCustomHeadElement("<style>body>div{background:#FFF;max-width:360px;margin:0 auto 100px;padding:45px;box-shadow:0 0 20px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.24)}input,select{background:#f2f2f2;width:100%;border:0;margin:0 0 15px;padding:15px;box-sizing:border-box;font-size:14px}button{line-height:1em;border-radius:0;text-transform:uppercase;background:#5B2500;width:100%;border:0;padding:15px;color:#FFF;font-size:14px;transition:all .3 ease;cursor:pointer}form button:hover,form button:active,form .button:focus{background:#C44F00} p{margin:15px 0 0;color:#333333;font-size:12px}a{color:#5B2500}body{background:#C44F00;font-family:sans-serif}body h1{text-align: center;}.q{opacity:0.7;}h1,form[action=\"/info\"],form[action=\"/exit\"]{display:none}</style>");
+
+  wifiManager.autoConnect("Radio");
   Serial.println("connected...yeey :)");
   String doneURL = getURL("http://backup.privet.lv/radio/?mac=" + WiFi.macAddress());
   Serial.println(WiFi.macAddress());
