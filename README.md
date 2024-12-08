@@ -1,4 +1,4 @@
-# Easy esp8266 Internet Radio (MP3 Stream) 
+# Easy esp8266, esp32 Internet Radio (MP3 Stream) 
 
 ![video](https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/video.gif)
 
