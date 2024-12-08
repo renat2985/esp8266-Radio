@@ -32,7 +32,7 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
     - Select the radio station you want to listen to.
 
 # Upload instruction
-## 🚀 Web installer (recommended for ESP8266, ESP32, ESP32s3):
+## 🚀 Web installer (recommended for ESP8266, ESP32, ESP32s2, ESP32s3):
 ### [https://renat2985.github.io/esp8266-Radio/](https://renat2985.github.io/esp8266-Radio/)
 
 ### Or NodeMCU Flasher:

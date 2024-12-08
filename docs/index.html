@@ -137,10 +137,15 @@
 
       .then((response) => response.json())
       .then((data) => {
+        if (data && data.length > 0) {
+          number = data.length-1;
+        } else {
+          number = 0;
+        }
         if (data != "") {
           $("#search-mac").css("display", "none");
           $("#find-mac").css("display", "block");
-          $("#mac").val(data[0].mac);
+          $("#mac").val(data[number].mac);
         }
       })
       .catch((error) => {

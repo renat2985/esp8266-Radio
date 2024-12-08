@@ -19,6 +19,15 @@
       ]
     },
     {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        { "path": "./build/esp32.esp32.esp32s2/esp8266-Radio.ino.bootloader.bin", "offset": 4096 },
+        { "path": "./build/esp32.esp32.esp32s2/esp8266-Radio.ino.partitions.bin", "offset": 32768 },
+        { "path": "./build/esp32.esp32.esp32s2/boot_app0.bin", "offset": 57344 },
+        { "path": "./build/esp32.esp32.esp32s2/esp8266-Radio.ino.bin", "offset": 65536 }
+      ]
+    },
+    {
       "chipFamily": "ESP32-S3",
       "parts": [
         { "path": "./build/esp32.esp32.esp32s3/esp8266-Radio.ino.bootloader.bin", "offset": 4096 },
