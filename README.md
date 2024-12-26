@@ -28,7 +28,7 @@ OLD: [http://backup.privet.lv/radio/](http://backup.privet.lv/radio/)
   
 5.	**Choosing a radio station:**
      
-    - Go to the website [http://www.onclick.lv/radio/](http://www.onclick.lv/radio/)
+    - Go to the website [https://www.onclick.lv/radio/](https://www.onclick.lv/radio/)
     - Select the radio station you want to listen to.
 
 # Upload instruction
