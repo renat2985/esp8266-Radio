@@ -59,6 +59,9 @@ Download Release: [Win32](https://github.com/nodemcu/nodemcu-flasher/blob/master
 ### NodeMCU ESP32
 <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU32_schematic.png" height="250px"> <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/NodeMCU32b_schematic.png" height="250px">
 
+### Wemos + PAM8403 Amplifier
+<img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/Wemos_schematic3.png" height="250px">
+
 ### AUX Connector
 <img src="https://raw.githubusercontent.com/renat2985/esp8266-Radio/master/tutorial/3.5.jpg" width="400px">
 
